@@ -8,7 +8,7 @@ jobs:
         with: 
           fetch-depth: 0
       - name: git the output of git diff
-        run: git --help
+        run: git ${{ github.event.before }} ${{ github.event.after }}
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
