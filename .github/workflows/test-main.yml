@@ -9,8 +9,8 @@ jobs:
           fetch-depth: 0
       - name: get file changes
         run: |
-          echo ${{ github }}
-          echo ${{ secrets }}
+          echo "${{ github }}"
+          echo "${{ secrets }}"
           
           
 # git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
