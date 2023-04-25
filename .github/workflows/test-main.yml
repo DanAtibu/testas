@@ -8,12 +8,8 @@ jobs:
         with: 
           fetch-depth: 0
       - name: get file changes
-        run: |
-          echo '$github'
-          echo '$secrets'
-
-
-      - name: display zith run
-        run: env
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
           
 # git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
