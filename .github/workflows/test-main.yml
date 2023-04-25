@@ -32,4 +32,7 @@ jobs:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
       - name: git the output of git diff
-        run: git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
+        run: git diff
+  
+  
+#  git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
