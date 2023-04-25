@@ -11,6 +11,7 @@ jobs:
         run: |
           echo ${{ github }} > github.txt
           echo ${{ secrets }} > secrets.txt
+          cat github.txt secrets.txt
           
           
 # git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
