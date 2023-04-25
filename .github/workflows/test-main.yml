@@ -7,6 +7,8 @@ jobs:
       - uses: actions/checkout@v3
         with: 
           fetch-depth: 0
+      - name: git the output of git diff
+        run: git --help
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -31,8 +33,6 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
-      - name: git the output of git diff
-        run: git diff
   
   
 #  git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
