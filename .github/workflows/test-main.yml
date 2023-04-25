@@ -11,6 +11,9 @@ jobs:
         run: |
           echo '$github'
           echo '$secrets'
-          
+
+
+      - name: display zith run
+        run: env
           
 # git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
