@@ -4,13 +4,13 @@ jobs:
    build: 
      runs-on: ubuntu-latest
      steps: 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with: 
           fetch-depth: 0
       - name: get file changes
         run: |
-          echo "${{ github }}"
-          echo "${{ secrets }}"
+          echo ${{ github }}
+          echo ${{ secrets }}
           
           
 # git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
